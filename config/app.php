@@ -159,6 +159,8 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        App\Providers\LoggerServiceProvider::class, // 日志记录
+        App\Providers\SqlQueryServiceProvider::class, // sql记录
 
     ],
 
