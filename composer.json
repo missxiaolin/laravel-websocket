@@ -9,7 +9,8 @@
         "fideloper/proxy": "^4.0",
         "laravel/framework": "5.6.*",
         "laravel/tinker": "^1.0",
-        "predis/predis": "^1.1"
+        "predis/predis": "^1.1",
+        "xiaolin/enum": "^0.0.1"
     },
     "require-dev": {
         "filp/whoops": "^2.0",
