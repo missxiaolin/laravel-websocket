@@ -11,5 +11,5 @@ node public/tools/boot.js
 ### 执行打包
 
 ~~~
-public/toolsr.js -o ../app.build.js
+public/tools/r.js -o ../app.build.js
 ~~~
