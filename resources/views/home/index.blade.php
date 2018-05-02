@@ -25,14 +25,16 @@
                         <div class="match-item-teams isLive">
                             <div>
 								<span>
-									<img src="{!! isset($host) ? $host : ''!!}/images/team1.png" width="25px" height="25px"/>
+									<img src="{!! isset($host) ? $host : ''!!}/images/team1.png" width="25px"
+                                         height="25px"/>
 									马刺
 								</span>
                                 <span>79</span>
                             </div>
                             <div>
 								<span>
-									<img src="{!! isset($host) ? $host : ''!!}/images/team2.png" width="25px" height="25px"/>
+									<img src="{!! isset($host) ? $host : ''!!}/images/team2.png" width="25px"
+                                         height="25px"/>
 									火箭
 								</span>
                                 <span>80</span>
@@ -53,20 +55,23 @@
                         <div class="match-item-info normal-font">
                             <div class="match-time">
                                 08: 00
-                                <img src="{!! isset($host) ? $host : ''!!}/images/match.png" width="25px" height="25px"/>
+                                <img src="{!! isset($host) ? $host : ''!!}/images/match.png" width="25px"
+                                     height="25px"/>
                             </div>
                             <div>NBA常规赛</div>
                         </div>
                         <div class="match-item-teams">
                             <div>
 								<span>
-									<img src="{!! isset($host) ? $host : ''!!}/images/team1.png" width="25px" height="25px"/> 马刺
+									<img src="{!! isset($host) ? $host : ''!!}/images/team1.png" width="25px"
+                                         height="25px"/> 马刺
 								</span>
                                 <span>-</span>
                             </div>
                             <div>
 								<span>
-									<img src="{!! isset($host) ? $host : ''!!}/images/team2.png" width="25px" height="25px"/> 火箭
+									<img src="{!! isset($host) ? $host : ''!!}/images/team2.png" width="25px"
+                                         height="25px"/> 火箭
 								</span>
                                 <span>-</span>
                             </div>
@@ -81,20 +86,23 @@
                         <div class="match-item-info normal-font">
                             <div class="match-time">
                                 08: 00
-                                <img src="{!! isset($host) ? $host : ''!!}/images/match.png" width="25px" height="25px"/>
+                                <img src="{!! isset($host) ? $host : ''!!}/images/match.png" width="25px"
+                                     height="25px"/>
                             </div>
                             <div>NBA常规赛</div>
                         </div>
                         <div class="match-item-teams">
                             <div>
 								<span>
-									<img src="{!! isset($host) ? $host : ''!!}/images/team1.png" width="25px" height="25px"/> 马刺
+									<img src="{!! isset($host) ? $host : ''!!}/images/team1.png" width="25px"
+                                         height="25px"/> 马刺
 								</span>
                                 <span>-</span>
                             </div>
                             <div>
 								<span>
-									<img src="{!! isset($host) ? $host : ''!!}/images/team2.png" width="25px" height="25px"/> 火箭
+									<img src="{!! isset($host) ? $host : ''!!}/images/team2.png" width="25px"
+                                         height="25px"/> 火箭
 								</span>
                                 <span>-</span>
                             </div>
@@ -109,20 +117,23 @@
                         <div class="match-item-info normal-font">
                             <div class="match-time">
                                 08: 00
-                                <img src="{!! isset($host) ? $host : ''!!}/images/match.png" width="25px" height="25px"/>
+                                <img src="{!! isset($host) ? $host : ''!!}/images/match.png" width="25px"
+                                     height="25px"/>
                             </div>
                             <div>NBA常规赛</div>
                         </div>
                         <div class="match-item-teams">
                             <div>
 								<span>
-									<img src="{!! isset($host) ? $host : ''!!}/images/team1.png" width="25px" height="25px"/> 马刺
+									<img src="{!! isset($host) ? $host : ''!!}/images/team1.png" width="25px"
+                                         height="25px"/> 马刺
 								</span>
                                 <span>-</span>
                             </div>
                             <div>
 								<span>
-									<img src="{!! isset($host) ? $host : ''!!}/images/team2.png" width="25px" height="25px"/> 火箭
+									<img src="{!! isset($host) ? $host : ''!!}/images/team2.png" width="25px"
+                                         height="25px"/> 火箭
 								</span>
                                 <span>-</span>
                             </div>
@@ -137,20 +148,23 @@
                         <div class="match-item-info normal-font">
                             <div class="match-time">
                                 08: 00
-                                <img src="{!! isset($host) ? $host : ''!!}/images/match.png" width="25px" height="25px"/>
+                                <img src="{!! isset($host) ? $host : ''!!}/images/match.png" width="25px"
+                                     height="25px"/>
                             </div>
                             <div>NBA常规赛</div>
                         </div>
                         <div class="match-item-teams">
                             <div>
 								<span>
-									<img src="{!! isset($host) ? $host : ''!!}/images/team1.png" width="25px" height="25px"/> 马刺
+									<img src="{!! isset($host) ? $host : ''!!}/images/team1.png" width="25px"
+                                         height="25px"/> 马刺
 								</span>
                                 <span>-</span>
                             </div>
                             <div>
 								<span>
-									<img src="{!! isset($host) ? $host : ''!!}/images/team2.png" width="25px" height="25px"/> 火箭
+									<img src="{!! isset($host) ? $host : ''!!}/images/team2.png" width="25px"
+                                         height="25px"/> 火箭
 								</span>
                                 <span>-</span>
                             </div>

@@ -13,7 +13,9 @@ css/common/reset.css
 
 css/home/index.css
 ----------------
-css/home/../common/common.css
+css/home/../common/main.css
+css/home/../common/reset.css
+css/home/../iconfont/iconfont.css
 css/home/index.css
 
 css/home/login.css
