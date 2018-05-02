@@ -1,5 +1,11 @@
 # laravel-websocket
 
+### 项目
+~~~
+cp .env.example .env
+php artisan key:generate
+~~~
+
 ### 项目打包
 
 生成模板文件
