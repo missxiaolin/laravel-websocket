@@ -27,4 +27,13 @@ class HomeController extends BaseController
         $this->file_js = 'pages/home/login';
         return $this->view('home.login');
     }
+
+    // 详情页
+    public function detail()
+    {
+        $this->title = '直播详情页';
+        $this->file_css = 'css/home/detail';
+        $this->file_js = 'pages/home/detail';
+        return $this->view('home.detail');
+    }
 }

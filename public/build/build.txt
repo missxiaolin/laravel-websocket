@@ -11,6 +11,13 @@ css/common/reset.css
 ----------------
 css/common/reset.css
 
+css/home/detail.css
+----------------
+css/home/../common/main.css
+css/home/../common/reset.css
+css/home/../iconfont/iconfont.css
+css/home/detail.css
+
 css/home/index.css
 ----------------
 css/home/../common/main.css
@@ -32,6 +39,11 @@ css/iconfont/demo.css
 css/iconfont/iconfont.css
 ----------------
 css/iconfont/iconfont.css
+
+js/../pages/home/detail.js
+----------------
+js/lib/jquery/jquery-2.0.0.min.js
+js/../pages/home/detail.js
 
 js/../pages/home/index.js
 ----------------

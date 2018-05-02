@@ -13,6 +13,15 @@
     "waitSeconds": 0,
     "modules": [
         {
+            "name": "../pages/home/detail",
+            "include": [
+                "jquery"
+            ],
+            "exclude": [
+                "../js/lib/config"
+            ]
+        },
+        {
             "name": "../pages/home/index",
             "include": [
                 "jquery"

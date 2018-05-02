@@ -18,3 +18,5 @@ Route::get('/', function () {
 $router->any('home/index', 'HomeController@index')->name('home.index');
 // 登录
 $router->any('home/login', 'HomeController@login')->name('home.login');
+// 详情页
+$router->any('home/detail', 'HomeController@detail')->name('home.detail');
