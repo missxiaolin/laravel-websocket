@@ -1,4 +1,7 @@
-require(['jquery'], function ($) {
+require(['jquery', 'page.params'], function ($, params) {
+    console.log(params)
+
+    
     var $nav = $('.tab-nav div');
     var $content = $('.tab-block > div');
     var $back = $('#back');

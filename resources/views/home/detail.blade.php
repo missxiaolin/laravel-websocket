@@ -1,3 +1,5 @@
+<?php \App\Http\Controllers\Resource::addParam([]); ?>
+
 @extends("layout.live")
 @section("content")
     <header class="header xxl-font">

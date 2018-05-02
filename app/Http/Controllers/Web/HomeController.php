@@ -31,9 +31,10 @@ class HomeController extends BaseController
     // 详情页
     public function detail()
     {
+        $data = [];
         $this->title = '直播详情页';
         $this->file_css = 'css/home/detail';
         $this->file_js = 'pages/home/detail';
-        return $this->view('home.detail');
+        return $this->view('home.detail', $data);
     }
 }
