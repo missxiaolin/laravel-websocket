@@ -14,5 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
-
+// 首页
 $router->any('home/index', 'HomeController@index')->name('home.index');
+// 登录
+$router->any('home/login', 'HomeController@login')->name('home.login');

@@ -20,6 +20,15 @@
             "exclude": [
                 "../js/lib/config"
             ]
+        },
+        {
+            "name": "../pages/home/login",
+            "include": [
+                "jquery"
+            ],
+            "exclude": [
+                "../js/lib/config"
+            ]
         }
     ]
 }

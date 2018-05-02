@@ -10,11 +10,21 @@ namespace App\Http\Controllers\Web;
 
 class HomeController extends BaseController
 {
+    // 首页
     public function index()
     {
         $this->title = '首页';
         $this->file_css = 'css/home/index';
         $this->file_js = 'pages/home/index';
         return $this->view('home.index');
+    }
+
+    // 登录
+    public function login()
+    {
+        $this->title = '登录';
+        $this->file_css = 'css/home/login';
+        $this->file_js = 'pages/home/login';
+        return $this->view('home.login');
     }
 }

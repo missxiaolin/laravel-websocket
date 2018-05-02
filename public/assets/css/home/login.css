@@ -1,0 +1,63 @@
+@import "../common/main.css";
+@import "../common/reset.css";
+@import "../iconfont/iconfont.css";
+
+body {
+    background: #eee;
+}
+
+.login {
+    text-align: center;
+    margin-top: 8vh;
+    padding: 20px;
+}
+
+.login h2 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.login-item {
+    font-size: 0;
+    background: #fff;
+    padding-left: 1rem;
+    border: 1px solid #eee;
+}
+
+/*避免两个输入框间的border重叠*/
+.login-item:last-child {
+    border-top: 0;
+}
+
+input, button {
+    width: 100%;
+    border: none;
+    outline: none;
+    height: 50px;
+    line-height: 50px;
+    font-size: 1.2rem;
+    color: #333;
+    background: transparent;
+}
+
+.phone-num {
+    width: 70%;
+}
+
+/*获取验证码的button*/
+.login-item button {
+    width: 30%;
+    padding: 0 10px;
+    background: none;
+    color: inherit;
+    display: inline-block;
+    background: ghostwhite;
+    border-left: 1px solid #eee;
+}
+
+.submit-btn {
+    background: #00a1d6;
+    width: 100%;
+    color: #fff;
+    margin-top: 30px;
+}
