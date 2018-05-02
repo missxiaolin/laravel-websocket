@@ -1,4 +1,10 @@
 <?php \App\Http\Controllers\Resource::addParam([]); ?>
+<?php \App\Http\Controllers\Resource::getInstance()->extCss([
+    'css/common/common'
+]); ?>
+<?php \App\Http\Controllers\Resource::getInstance()->extJs([
+    'js/a'
+]); ?>
 
 @extends("layout.live")
 @section("content")
