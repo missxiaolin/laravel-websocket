@@ -12,6 +12,11 @@
     <meta name="author" content="">
     <meta name="Keywords" content="{!!$meta_keyword or ''!!}"/>
     <meta name="Description" content="{!!$meta_description or ''!!}"/>
+    @if (isset($file_css) && $file_css)
+        <style></style>
+        <link href="{!! isset($host) ? $host : ''!!}/{!!$file_css!!}.css?v= {{ time() }})"
+              rel="stylesheet"/>
+    @endif
 
 </head>
 
@@ -29,12 +34,6 @@
     <div class="network-status"></div>
 </div>
 
-
-@if (isset($file_css) && $file_css)
-    <style></style>
-    <link href="{!! isset($host) ? $host : ''!!}/{!!$file_css!!}.css?v= {{ time() }})"
-          rel="stylesheet"/>
-@endif
 <script src="{!! isset($host) ? $host : ''!!}/js/lib/require.js"></script>
 <script src="{!! isset($host) ? $host : ''!!}/js/lib/config.js"></script>
 <script>
