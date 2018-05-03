@@ -12,12 +12,7 @@
     <meta name="author" content="">
     <meta name="Keywords" content="{!!$meta_keyword or ''!!}"/>
     <meta name="Description" content="{!!$meta_description or ''!!}"/>
-    <?php
-    $static_resources_css = \App\Http\Controllers\Resource::getInstance()->loadStyles();
-    ?>
-    @foreach($static_resources_css['external'] ?? [] as $css_file)
-        <link href="{{$css_file}}" rel="stylesheet"/>
-    @endforeach
+    @include('layout.style')
 
 </head>
 
@@ -49,11 +44,7 @@
         return {!!json_encode( \App\Http\Controllers\Resource::getAllParams())!!};
     });
 </script>
-<?php
-$static_resources = \App\Http\Controllers\Resource::getInstance()->loadScripts();
-?>
-@foreach($static_resources['external'] ?? [] as $js_file)
-    <script src="{{$js_file}}" type="text/javascript"></script>
-@endforeach
+
+@include('layout.script')
 </body>
 </html>
