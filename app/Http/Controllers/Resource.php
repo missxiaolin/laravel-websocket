@@ -10,7 +10,6 @@ namespace App\Http\Controllers;
 
 class Resource
 {
-
     use InstanceTrait;
 
     const SOURCE_EXTERNAL = 'external';
@@ -32,9 +31,27 @@ class Resource
 
     public $dest_dir = '';
 
+    private $title;
+
     public function __construct()
     {
         $this->dest_dir = config('page.host') . '/';
+    }
+
+    /**
+     * @param string $value
+     */
+    public function setTitle($value)
+    {
+        $this->title = $value;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getTitle()
+    {
+        return $this->title;
     }
 
     /**

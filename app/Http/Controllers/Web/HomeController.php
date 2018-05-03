@@ -13,14 +13,12 @@ class HomeController extends BaseController
     // 首页
     public function index()
     {
-        $this->title = '首页';
         return $this->view('home.index');
     }
 
     // 登录
     public function login()
     {
-        $this->title = '登录';
         return $this->view('home.login');
     }
 
@@ -28,7 +26,6 @@ class HomeController extends BaseController
     public function detail()
     {
         $data = [];
-        $this->title = '直播详情页';
         return $this->view('home.detail', $data);
     }
 }

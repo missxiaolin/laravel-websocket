@@ -1,8 +1,10 @@
 <?php
-\App\Http\Controllers\Resource::getInstance()->extJs([
+use \App\Http\Controllers\Resource;
+Resource::getInstance()->setTitle('首页');
+Resource::getInstance()->extJs([
     'pages/home/index'
 ]);
-\App\Http\Controllers\Resource::getInstance()->extCss([
+Resource::getInstance()->extCss([
     'css/home/index'
 ]);
 ?>

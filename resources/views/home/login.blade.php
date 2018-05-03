@@ -1,8 +1,10 @@
 <?php
-\App\Http\Controllers\Resource::getInstance()->extJs([
+use \App\Http\Controllers\Resource;
+Resource::getInstance()->setTitle('登录');
+Resource::getInstance()->extJs([
     'pages/home/login'
 ]);
-\App\Http\Controllers\Resource::getInstance()->extCss([
+Resource::getInstance()->extCss([
     'css/home/login'
 ]);
 ?>

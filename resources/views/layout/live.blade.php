@@ -7,7 +7,7 @@
     <meta content="telephone=no,email=no" name="format-detection"/>
     <meta name="viewport"
           content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"/>
-    <title>{!! $title or ''!!}</title>
+    <title><?php echo \App\Http\Controllers\Resource::getInstance()->getTitle() ?></title>
 
     <meta name="author" content="">
     <meta name="Keywords" content="{!!$meta_keyword or ''!!}"/>
