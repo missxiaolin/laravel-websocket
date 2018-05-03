@@ -1,38 +1,48 @@
-require(['jquery'], function ($) {
-
-    var $back = $('#back');
-    var $submitBtn = $('#submit-btn');
-    // 获取验证吗
-    $('#authCodeBtn').click(function (event) {
-
-        var phone_num = $(" input[ name='phone_num' ] ").val()
-        url = "http://singwa.swoole.com:8811?s=index/login&phone_num=" + phone_num;
-        $(this).html('已发送').attr('disabled', true);
-        // $.post()
-        $.get(url, function (data) {
-            // TODO: 将下面3行代码删除
-            if (data.status == 'ok') {
-                alert('发送完成');
-            }
-            // if (result.status != 'ok') {
-            // 	alert('网络错误');
-            // }
-        });
-    });
-
-    // 提交表单
-    $submitBtn.click(function (event) {
-        event.preventDefault();
-        var formData = $('form').serialize();
-        // TODO: 请求后台接口跳转界面，前端跳转或者后台跳
-        $.get("https://www.easy-mock.com/mock/5ab1188bddac7967e4398146/example/query?" + formData, function (data) {
-            console.log("https://www.easy-mock.com/mock/5ab1188bddac7967e4398146/example/query?" + formData);
-            // location.href='index.html';
-        });
-    });
-
+require(['zepto', 'validate'], function ($, mvalidate) {
     // 返回上一页
-    $back.click(function (e) {
+    $('#back').click(function (e) {
         window.history.back();
     });
+
+    var Login = function () {
+        var self = this;
+        self.bindEvent();
+    };
+
+    Login.prototype.bindEvent = function () {
+        var self = this;
+        $('#form').mvalidate({
+            type: 2,
+            onKeyup: true,
+            sendForm: true,
+            firstInvalidFocus: true,
+            valid: function (event, options) {
+                //点击提交按钮时，表单通过验证触发函数
+            },
+            invalid: function (event, status, options) {
+                //点击提交按钮时,表单未通过验证触发函数
+
+            },
+            eachField: function (event, status, options) {
+                //点击提交按钮时,表单每个输入域触发这个函数 this 执向当前表单输入域，是jquery对象
+            },
+            eachValidField: function (val) {
+            },
+            eachInvalidField: function (event, status, options) {
+            },
+            descriptions: {
+                phone: {
+                    required: '请输入手机号',
+                    pattern: '手机号码格式不正确',
+                    valid: '',
+                },
+                password: {
+                    required: '请输入密码',
+                    pattern: '密码不正确',
+                    valid: '',
+                }
+            }
+        })
+    };
+    new Login();
 });

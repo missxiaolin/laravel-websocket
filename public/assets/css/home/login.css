@@ -61,3 +61,7 @@ input, button {
     color: #fff;
     margin-top: 30px;
 }
+
+.error-tip {
+    text-align: left;
+}

@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Web;
+
 /**
  * Created by PhpStorm.
  * User: mac

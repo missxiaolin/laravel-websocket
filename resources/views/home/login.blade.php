@@ -1,5 +1,7 @@
 <?php
+
 use \App\Http\Controllers\Resource;
+
 Resource::getInstance()->setTitle('登录');
 Resource::getInstance()->extJs([
     'pages/home/login'
@@ -14,15 +16,24 @@ Resource::getInstance()->extCss([
         <i class="icon iconfont icon-fanhui back" id="back"></i>
         登录
     </header>
-    <form class="login" id="form">
-        <h2>图文直播平台</h2>
+    <form class="login" id="form" action="">
         <div class="login-item">
-            <input type="text" placeholder="手机号" class="phone-num" name="phone_num"/>
-            <button type="button" id="authCodeBtn">验证码</button>
+            <input type="text" name="phone" id="phone" placeholder="请输入手机号" maxlength="11" value=""
+                   data-required="true"
+                   data-pattern="^1(3|4|5|7|8)\d{9}$"
+                   data-descriptions="phone"
+                   data-describedby="phone-description"/>
         </div>
+        <div id="phone-description" class="error-tip"></div>
         <div class="login-item">
-            <input type="text" placeholder="验证码" name="code" />
+            <input type="password" name="password" id="password" placeholder="请输入密码" maxlength="12"
+                   value=""
+                   data-pattern="^[0-9a-zA-z]{6,12}$"
+                   data-required="true"
+                   data-descriptions="password"
+                   data-describedby="password-description"/>
         </div>
-        <button type="submit" class="submit-btn" id="submit-btn">进入平台</button>
+        <div id="password-description" class="error-tip"></div>
+        <button type="submit" class="submit-btn" >进入平台</button>
     </form>
 @endsection
