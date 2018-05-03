@@ -1,3 +1,11 @@
+<?php
+\App\Http\Controllers\Resource::getInstance()->extJs([
+    'pages/home/login'
+]);
+\App\Http\Controllers\Resource::getInstance()->extCss([
+    'css/home/login'
+]);
+?>
 @extends("layout.live")
 @section("content")
     <header class="header xxl-font">

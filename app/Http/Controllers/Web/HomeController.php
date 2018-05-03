@@ -14,8 +14,6 @@ class HomeController extends BaseController
     public function index()
     {
         $this->title = '首页';
-        $this->file_css = 'css/home/index';
-        $this->file_js = 'pages/home/index';
         return $this->view('home.index');
     }
 
@@ -23,8 +21,6 @@ class HomeController extends BaseController
     public function login()
     {
         $this->title = '登录';
-        $this->file_css = 'css/home/login';
-        $this->file_js = 'pages/home/login';
         return $this->view('home.login');
     }
 
@@ -33,8 +29,6 @@ class HomeController extends BaseController
     {
         $data = [];
         $this->title = '直播详情页';
-        $this->file_css = 'css/home/detail';
-        $this->file_js = 'pages/home/detail';
         return $this->view('home.detail', $data);
     }
 }

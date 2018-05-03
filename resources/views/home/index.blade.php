@@ -1,3 +1,11 @@
+<?php
+\App\Http\Controllers\Resource::getInstance()->extJs([
+    'pages/home/index'
+]);
+\App\Http\Controllers\Resource::getInstance()->extCss([
+    'css/home/index'
+]);
+?>
 @extends("layout.live")
 @section("content")
     <div>

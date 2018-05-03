@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Http\Controllers\Web;
 
 
@@ -10,8 +11,6 @@ class BaseController extends Controller
     protected $meta_title = '';
     protected $meta_keyword = '';
     protected $meta_description = '';
-    protected $file_css = '';
-    protected $file_js = '';
 
     public function setSeo($title, $keyword, $description)
     {
@@ -28,8 +27,6 @@ class BaseController extends Controller
                 'title' => $this->title,
                 'host' => config('page.host'),
                 'base_url' => config('page.host') . '/js',
-                'file_css' => $this->file_css,
-                'file_js' => $this->file_js,
             ),
             $data
         );
