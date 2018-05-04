@@ -52,5 +52,6 @@ js/../pages/home/index.js
 
 js/../pages/home/login.js
 ----------------
-js/lib/jquery/jquery-2.0.0.min.js
+js/lib/zepto-custom.min.js
+js/lib/zepto-mvalidate.js
 js/../pages/home/login.js

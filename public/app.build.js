@@ -15,7 +15,8 @@
         {
             "name": "../pages/home/detail",
             "include": [
-                "jquery"
+                "jquery",
+                "page.params"
             ],
             "exclude": [
                 "../js/lib/config"
@@ -33,7 +34,8 @@
         {
             "name": "../pages/home/login",
             "include": [
-                "jquery"
+                "zepto",
+                "validate"
             ],
             "exclude": [
                 "../js/lib/config"
