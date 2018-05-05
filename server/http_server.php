@@ -1,7 +1,6 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: baidu
  * Date: 18/2/28
  * Time: 上午1:39
  */
@@ -19,5 +18,3 @@ $http->on('request', function($request, $response) {
 });
 
 $http->start();
-
-// topthink/think-swoole
