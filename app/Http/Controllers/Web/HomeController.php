@@ -11,19 +11,28 @@ namespace App\Http\Controllers\Web;
 
 class HomeController extends BaseController
 {
-    // 首页
+    /**
+     * 首页
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function index()
     {
         return $this->view('home.index');
     }
 
-    // 登录
+    /**
+     * 登录
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function login()
     {
         return $this->view('home.login');
     }
 
-    // 详情页
+    /**
+     * 详情页
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function detail()
     {
         $data = [];
