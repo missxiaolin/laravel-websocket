@@ -19,3 +19,8 @@ node public/tools/boot.js
 ~~~
 public/tools/r.js -o ../app.build.js
 ~~~
+
+### 项目登录
+
+账号：17135501103、17135501104
+密码：123456
