@@ -9,19 +9,6 @@ require(['zepto', 'validate', 'ajax'], function ($, mvalidate) {
         self.bindEvent();
     };
 
-    $.http({
-        type: 'POST',
-        dataType: 'json',
-        url: '/api/user/login',
-        data: $('#form').serialize(),
-        success: function (data) {
-
-        },
-        error: function (data) {
-
-        }
-    });
-
     Login.prototype.bindEvent = function () {
         var self = this;
         $('#form').mvalidate({
@@ -37,10 +24,9 @@ require(['zepto', 'validate', 'ajax'], function ($, mvalidate) {
                     url: '/api/user/login',
                     data: $('#form').serialize(),
                     success: function (data) {
-
+                        window.location.href = '/home/index'
                     },
                     error: function (data) {
-
                     }
                 });
             },
