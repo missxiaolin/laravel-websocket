@@ -14,10 +14,7 @@ Resource::getInstance()->extCss([
         <header class="header">
             赛程
             <!--用户处于登录状态时，将该按钮隐藏-->
-            <a href="./login.html">
-                <!-- <i class="icon iconfont icon-wode my"></i> -->
-                <span class="my">登录</span>
-            </a>
+            <span class="my">{{ $user->username ?? '' }}</span>
         </header>
         <div class="content">
             <div class="match">
