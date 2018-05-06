@@ -15,12 +15,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// 首页
-$router->any('home/index', 'HomeController@index')->name('home.index');
 // 登录
 $router->any('home/login', 'HomeController@login')->name('home.login');
-// 详情页
-$router->any('home/detail', 'HomeController@detail')->name('home.detail');
+
+Route::group(['middleware' => 'auth.web'], function () {
+    // 首页
+    Route::any('home/index', 'HomeController@index')->name('home.index');
+    // 详情页
+    Route::any('home/detail', 'HomeController@detail')->name('home.detail');
+});
 
 // api
 Route::group(['prefix' => 'api', 'namespace' => 'Api'], function () {
