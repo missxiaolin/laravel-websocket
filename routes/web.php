@@ -21,3 +21,8 @@ $router->any('home/index', 'HomeController@index')->name('home.index');
 $router->any('home/login', 'HomeController@login')->name('home.login');
 // 详情页
 $router->any('home/detail', 'HomeController@detail')->name('home.detail');
+
+// api
+Route::group(['prefix' => 'api', 'namespace' => 'Api'], function () {
+    Route::any('/user/login', 'UserController@login')->name('api.user.login');
+});

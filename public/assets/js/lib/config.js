@@ -6,7 +6,8 @@ require.config({
     paths: {
         'jquery': 'lib/jquery/jquery-2.0.0.min',
         'zepto': 'lib/zepto-custom.min',
-        'validate': 'lib/zepto-mvalidate'
+        'validate': 'lib/zepto-mvalidate',
+        'ajax': 'lib/ajax'
     },
     shim: {
         zepto: {

@@ -1,4 +1,4 @@
-require(['zepto', 'validate'], function ($, mvalidate) {
+require(['zepto', 'validate', 'ajax'], function ($, mvalidate) {
     // 返回上一页
     $('#back').click(function (e) {
         window.history.back();
@@ -9,6 +9,19 @@ require(['zepto', 'validate'], function ($, mvalidate) {
         self.bindEvent();
     };
 
+    $.http({
+        type: 'POST',
+        dataType: 'json',
+        url: '/api/user/login',
+        data: $('#form').serialize(),
+        success: function (data) {
+
+        },
+        error: function (data) {
+
+        }
+    });
+
     Login.prototype.bindEvent = function () {
         var self = this;
         $('#form').mvalidate({
@@ -18,10 +31,21 @@ require(['zepto', 'validate'], function ($, mvalidate) {
             firstInvalidFocus: true,
             valid: function (event, options) {
                 //点击提交按钮时，表单通过验证触发函数
+                $.http({
+                    type: 'POST',
+                    dataType: 'json',
+                    url: '/api/user/login',
+                    data: $('#form').serialize(),
+                    success: function (data) {
+
+                    },
+                    error: function (data) {
+
+                    }
+                });
             },
             invalid: function (event, status, options) {
                 //点击提交按钮时,表单未通过验证触发函数
-
             },
             eachField: function (event, status, options) {
                 //点击提交按钮时,表单每个输入域触发这个函数 this 执向当前表单输入域，是jquery对象

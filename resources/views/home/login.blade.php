@@ -16,7 +16,7 @@ Resource::getInstance()->extCss([
         <i class="icon iconfont icon-fanhui back" id="back"></i>
         登录
     </header>
-    <form class="login" id="form" action="">
+    <form class="login" id="form" onsubmit="return false">
         <div class="login-item">
             <input type="text" name="phone" id="phone" placeholder="请输入手机号" maxlength="11" value=""
                    data-required="true"
@@ -33,6 +33,7 @@ Resource::getInstance()->extCss([
                    data-descriptions="password"
                    data-describedby="password-description"/>
         </div>
+        {{ csrf_field() }}
         <div id="password-description" class="error-tip"></div>
         <button type="submit" class="submit-btn" >进入平台</button>
     </form>
