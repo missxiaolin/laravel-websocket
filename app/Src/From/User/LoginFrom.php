@@ -70,7 +70,7 @@ class LoginFrom extends Form
         if (!$model) {
             $this->addError('phone', '账号密码错误！');
         }
-        if (!$user_repository->checkPassword($this->password, $model->password)) {
+        if ($model && !$user_repository->checkPassword($this->password, $model->password)) {
             $this->addError('phone', '账号密码错误！');
         }
         $this->model = $model;
