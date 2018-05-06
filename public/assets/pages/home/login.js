@@ -24,7 +24,11 @@ require(['zepto', 'validate', 'ajax'], function ($, mvalidate) {
                     url: '/api/user/login',
                     data: $('#form').serialize(),
                     success: function (data) {
-                        window.location.href = '/home/index'
+                        if (data.code == 0){
+                            window.location.href = '/home/index'
+                        }
+                        console.log(data)
+
                     },
                     error: function (data) {
                     }

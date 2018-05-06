@@ -177,7 +177,7 @@ abstract class Form implements Arrayable
     protected function response(array $errors)
     {
         if (app('request')->ajax() || app('request')->wantsJson()) {
-            return new JsonResponse($errors, 422);
+            return error($errors, 500);
         }
         return redirect()->back()
             ->withInput($this->data)

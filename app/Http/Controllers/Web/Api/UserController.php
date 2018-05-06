@@ -24,6 +24,6 @@ class UserController extends BaseController
         $data = request()->all();
         $from->validate($data);
         Auth::guard('web')->loginUsingId($from->model->id);
-        return response()->json([], 200);
+        return api_response([]);
     }
 }
