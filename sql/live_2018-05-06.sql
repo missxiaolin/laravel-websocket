@@ -7,7 +7,7 @@
 #
 # Host: localhost (MySQL 5.7.18)
 # Database: live
-# Generation Time: 2018-05-06 09:46:15 +0000
+# Generation Time: 2018-05-06 10:05:21 +0000
 # ************************************************************
 
 
@@ -27,10 +27,10 @@ DROP TABLE IF EXISTS `live_chart`;
 
 CREATE TABLE `live_chart` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `game_id` int(10) unsigned NOT NULL DEFAULT '0',
-  `user_id` tinyint(1) unsigned NOT NULL DEFAULT '0',
-  `content` varchar(200) NOT NULL DEFAULT '',
-  `status` tinyint(1) unsigned NOT NULL DEFAULT '0',
+  `game_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '比赛id',
+  `user_id` tinyint(1) unsigned NOT NULL DEFAULT '0' COMMENT '用户id',
+  `content` varchar(200) NOT NULL DEFAULT '' COMMENT '内容',
+  `status` tinyint(1) unsigned NOT NULL DEFAULT '0' COMMENT '状态',
   `create_time` int(10) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -44,14 +44,14 @@ DROP TABLE IF EXISTS `live_game`;
 
 CREATE TABLE `live_game` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `a_id` tinyint(1) unsigned NOT NULL DEFAULT '0',
-  `b_id` tinyint(1) unsigned NOT NULL DEFAULT '0',
-  `a_score` int(10) unsigned NOT NULL DEFAULT '0',
-  `b_score` int(10) unsigned NOT NULL DEFAULT '0',
-  `narrator` varchar(20) NOT NULL DEFAULT '',
-  `image` varchar(20) NOT NULL DEFAULT '',
-  `start_time` int(10) unsigned NOT NULL DEFAULT '0',
-  `status` tinyint(1) unsigned NOT NULL DEFAULT '0',
+  `a_id` tinyint(1) unsigned NOT NULL DEFAULT '0' COMMENT '球队id',
+  `b_id` tinyint(1) unsigned NOT NULL DEFAULT '0' COMMENT '球队id',
+  `a_score` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '球队比分',
+  `b_score` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '球队比分',
+  `narrator` varchar(20) NOT NULL DEFAULT '' COMMENT '直播员',
+  `image` varchar(20) NOT NULL DEFAULT '' COMMENT '图片',
+  `start_time` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '直播开始时间',
+  `status` tinyint(1) unsigned NOT NULL DEFAULT '0' COMMENT '是否开始',
   `create_time` int(10) unsigned NOT NULL DEFAULT '0',
   `update_time` int(10) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
@@ -66,12 +66,12 @@ DROP TABLE IF EXISTS `live_outs`;
 
 CREATE TABLE `live_outs` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `game_id` int(10) unsigned NOT NULL DEFAULT '0',
-  `team_id` tinyint(1) unsigned NOT NULL DEFAULT '0',
-  `content` varchar(200) NOT NULL DEFAULT '',
-  `image` varchar(20) NOT NULL DEFAULT '',
+  `game_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '直播id',
+  `team_id` tinyint(1) unsigned NOT NULL DEFAULT '0' COMMENT '球队id',
+  `content` varchar(200) NOT NULL DEFAULT '' COMMENT '内容',
+  `image` varchar(20) NOT NULL DEFAULT '' COMMENT '图片',
   `type` tinyint(1) unsigned NOT NULL DEFAULT '0',
-  `status` tinyint(1) unsigned NOT NULL DEFAULT '0',
+  `status` tinyint(1) unsigned NOT NULL DEFAULT '0' COMMENT '状态',
   `create_time` int(10) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -85,11 +85,11 @@ DROP TABLE IF EXISTS `live_player`;
 
 CREATE TABLE `live_player` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(20) NOT NULL DEFAULT '',
-  `image` varchar(20) NOT NULL DEFAULT '',
-  `age` tinyint(1) unsigned NOT NULL DEFAULT '0',
-  `position` tinyint(1) unsigned NOT NULL DEFAULT '0',
-  `status` tinyint(1) unsigned NOT NULL DEFAULT '0',
+  `name` varchar(20) NOT NULL DEFAULT '' COMMENT '球员名称',
+  `image` varchar(20) NOT NULL DEFAULT '' COMMENT '球员图像',
+  `age` tinyint(1) unsigned NOT NULL DEFAULT '0' COMMENT '球员年龄',
+  `position` tinyint(1) unsigned NOT NULL DEFAULT '0' COMMENT '编号',
+  `status` tinyint(1) unsigned NOT NULL DEFAULT '0' COMMENT '是否显示',
   `create_time` int(10) unsigned NOT NULL DEFAULT '0',
   `update_time` int(10) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
@@ -104,9 +104,9 @@ DROP TABLE IF EXISTS `live_team`;
 
 CREATE TABLE `live_team` (
   `id` tinyint(1) unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(20) NOT NULL DEFAULT '',
-  `image` varchar(20) NOT NULL DEFAULT '',
-  `type` tinyint(1) unsigned NOT NULL DEFAULT '0',
+  `name` varchar(20) NOT NULL DEFAULT '' COMMENT '球队名称',
+  `image` varchar(20) NOT NULL DEFAULT '' COMMENT '球队Logo图片',
+  `type` tinyint(1) unsigned NOT NULL DEFAULT '0' COMMENT '球队分区',
   `create_time` int(10) unsigned NOT NULL DEFAULT '0',
   `update_time` int(10) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
