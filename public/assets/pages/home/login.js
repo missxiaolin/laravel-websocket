@@ -27,6 +27,7 @@ require(['zepto', 'validate', 'ajax'], function ($, mvalidate) {
                         if (data.code == 0){
                             window.location.href = '/home/index'
                         }
+                        $('.error').html(data.message)
                         console.log(data)
 
                     },

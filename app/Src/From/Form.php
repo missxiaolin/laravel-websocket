@@ -170,18 +170,18 @@ abstract class Form implements Arrayable
     /**
      * Get the proper failed validation response for the request.
      *
-     * @param  array $errors
+     * @param  string $error
      *
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    protected function response(array $errors)
+    protected function response($error)
     {
         if (app('request')->ajax() || app('request')->wantsJson()) {
-            return error($errors, 500);
+            return error($error, 500);
         }
         return redirect()->back()
             ->withInput($this->data)
-            ->withErrors($errors);
+            ->withErrors($error);
     }
 
     /**
@@ -194,7 +194,7 @@ abstract class Form implements Arrayable
      */
     protected function formatErrors(MessageBag $message)
     {
-        return $message->getMessages();
+        return array_get(current($message->getMessages()), 0);
     }
 
     /**
@@ -265,7 +265,7 @@ abstract class Form implements Arrayable
      * Dynamically set attributes on the model.
      *
      * @param  string $key
-     * @param  mixed  $value
+     * @param  mixed $value
      *
      * @return mixed
      */

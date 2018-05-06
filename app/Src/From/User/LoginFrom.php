@@ -51,7 +51,7 @@ class LoginFrom extends Form
     public function attributes()
     {
         return [
-            'phone' => '手机号码',
+            'phone' => '账号',
             'password' => '密码',
         ];
     }
@@ -68,7 +68,7 @@ class LoginFrom extends Form
         $user_repository = app(UserRepository::class);
         $model = $user_repository->getUser($this->phone);
         if (!$model) {
-            $this->addError('phone', '账号密码错误！');
+            $this->addError('phone', '密码错误！');
         }
         if ($model && !$user_repository->checkPassword($this->password, $model->password)) {
             $this->addError('phone', '账号密码错误！');

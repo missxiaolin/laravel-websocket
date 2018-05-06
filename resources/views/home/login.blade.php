@@ -35,6 +35,7 @@ Resource::getInstance()->extCss([
         </div>
         {{ csrf_field() }}
         <div id="password-description" class="error-tip"></div>
+        <div class="error"></div>
         <button type="submit" class="submit-btn" >进入平台</button>
     </form>
 @endsection
