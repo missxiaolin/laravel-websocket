@@ -18,7 +18,6 @@ require([
             console.log(result)
         }
     });
-    $('#image').value('111')
 
 
     //加载弹出层
