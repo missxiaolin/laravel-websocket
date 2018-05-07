@@ -31,7 +31,7 @@ class ImageController extends BaseController
             $fileName = date('Y-m-d-H-i-s') . '-' . uniqid() . '.' . $ext;
 
             Storage::disk('uploads')->put($fileName, file_get_contents($realPath));
-            return api_response(['image'=>$fileName]);
+            return api_response(['image' => '/uploads/' . $fileName]);
         }
         return api_error(ErrorCode::$ENUM_SYSTEM_TIMEOUT);
     }

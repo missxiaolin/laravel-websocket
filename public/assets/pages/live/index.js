@@ -6,13 +6,19 @@ require([
 ], function ($, fileupload) {
     //图片上传
     fileupload({
-        url:'/admin/image/upload',
+        url: '/admin/image/upload',
         acceptFileTypes: ['jpg', 'jpeg', 'png', 'bmp'],
         dom: $('#addPicture_product'),
         callback: function (result, data) {
-            console.log(data)
+            if (result.code == 0) {
+                var html = '<img width="200px" src="' + result.data.image + '" alt="">';
+                html += '<input type="hidden" name="image" id="image" value="'+ result.data.image +'">'
+                $('#fileList').html(html);
+            }
+            console.log(result)
         }
     });
+    $('#image').value('111')
 
 
     //加载弹出层
