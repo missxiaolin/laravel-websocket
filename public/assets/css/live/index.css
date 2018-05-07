@@ -1,2 +1,16 @@
 @import "../common/xadmin.css";
 @import "../common/font.css";
+
+#filePicker{
+    overflow: hidden;
+    position: relative;
+}
+
+#filePicker input{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 200px;
+    height: 200px;
+    opacity: 0;
+}
