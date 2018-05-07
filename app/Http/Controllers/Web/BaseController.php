@@ -51,7 +51,12 @@ class BaseController extends Controller
      */
     public function getUser()
     {
-        return Auth::guard('web')->user();
+        return $this->authUser()->user();
+    }
+
+    public function authUser()
+    {
+        return Auth::guard('web');
     }
 
 }
