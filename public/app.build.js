@@ -35,7 +35,17 @@
             "name": "../pages/home/login",
             "include": [
                 "zepto",
-                "validate"
+                "validate",
+                "ajax"
+            ],
+            "exclude": [
+                "../js/lib/config"
+            ]
+        },
+        {
+            "name": "../pages/live/index",
+            "include": [
+                "jquery"
             ],
             "exclude": [
                 "../js/lib/config"

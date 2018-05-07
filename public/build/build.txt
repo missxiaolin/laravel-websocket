@@ -3,6 +3,10 @@ css/common/common.css
 ----------------
 css/common/common.css
 
+css/common/font.css
+----------------
+css/common/font.css
+
 css/common/main.css
 ----------------
 css/common/main.css
@@ -10,6 +14,11 @@ css/common/main.css
 css/common/reset.css
 ----------------
 css/common/reset.css
+
+css/common/xadmin.css
+----------------
+css/common/../../js/lib/layui/css/layui.css
+css/common/xadmin.css
 
 css/home/detail.css
 ----------------
@@ -39,6 +48,32 @@ css/iconfont/demo.css
 css/iconfont/iconfont.css
 ----------------
 css/iconfont/iconfont.css
+
+css/live/index.css
+----------------
+css/live/../common/xadmin.css
+css/live/../common/font.css
+css/live/index.css
+
+js/lib/layui/css/layui.css
+----------------
+js/lib/layui/css/layui.css
+
+js/lib/layui/css/layui.mobile.css
+----------------
+js/lib/layui/css/layui.mobile.css
+
+js/lib/layui/css/modules/code.css
+----------------
+js/lib/layui/css/modules/code.css
+
+js/lib/layui/css/modules/laydate/default/laydate.css
+----------------
+js/lib/layui/css/modules/laydate/default/laydate.css
+
+js/lib/layui/css/modules/layer/default/layer.css
+----------------
+js/lib/layui/css/modules/layer/default/layer.css
 
 js/../pages/home/detail.js
 ----------------
@@ -54,4 +89,10 @@ js/../pages/home/login.js
 ----------------
 js/lib/zepto-custom.min.js
 js/lib/zepto-mvalidate.js
+js/lib/ajax.js
 js/../pages/home/login.js
+
+js/../pages/live/index.js
+----------------
+js/lib/jquery/jquery-2.0.0.min.js
+js/../pages/live/index.js

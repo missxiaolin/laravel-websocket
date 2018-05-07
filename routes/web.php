@@ -29,3 +29,8 @@ Route::group(['middleware' => 'auth.web'], function () {
 Route::group(['prefix' => 'api', 'namespace' => 'Api'], function () {
     Route::any('/user/login', 'UserController@login')->name('api.user.login');
 });
+
+// admin
+Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
+    Route::any('/live/index', 'LiveController@index')->name('live.index');
+});
