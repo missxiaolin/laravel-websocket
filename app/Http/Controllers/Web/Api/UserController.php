@@ -11,7 +11,6 @@ namespace App\Http\Controllers\Web\Api;
 
 use App\Http\Controllers\Web\BaseController;
 use App\Src\From\User\LoginFrom;
-use Illuminate\Support\Facades\Auth;
 
 class UserController extends BaseController
 {
