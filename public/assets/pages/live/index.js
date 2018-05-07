@@ -1,4 +1,20 @@
-require(['jquery'], function ($) {
+require([
+    'jquery',
+    'upload',
+    'jquery.ui.widget',
+    'jquery.fileupload'
+], function ($, fileupload) {
+    //图片上传
+    fileupload({
+        url:'/admin/image/upload',
+        acceptFileTypes: ['jpg', 'jpeg', 'png', 'bmp'],
+        dom: $('#addPicture_product'),
+        callback: function (result, data) {
+            console.log(data)
+        }
+    });
+
+
     //加载弹出层
     layui.use(['form', 'element'],
         function () {

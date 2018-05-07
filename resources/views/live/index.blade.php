@@ -58,7 +58,10 @@ Resource::getInstance()->extCss([
                 <div id="uploader-demo">
                     <!--用来存放item-->
                     <div id="fileList" class="uploader-list"></div>
-                    <div id="filePicker">选择图片</div>
+                    <div id="filePicker">
+                        选择图片
+                        <input type="file" id="addPicture_product" name="file" class="add-img-click" >
+                    </div>
                 </div>
 
             </div>

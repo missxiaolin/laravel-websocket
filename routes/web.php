@@ -33,4 +33,6 @@ Route::group(['prefix' => 'api', 'namespace' => 'Api'], function () {
 // admin
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
     Route::any('/live/index', 'LiveController@index')->name('live.index');
+    // 图片上传
+    Route::any('/image/upload', 'ImageController@upload')->name('image.upload');
 });
