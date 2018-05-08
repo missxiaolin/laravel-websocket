@@ -12,7 +12,7 @@ Resource::getInstance()->extCss([
 @extends("layout.live")
 @section("content")
     <div class="x-body">
-        <form class="layui-form">
+        <form class="layui-form" onsubmit="return false">
 
             <div class="layui-form-item">
                 <label for="username" class="layui-form-label">
@@ -35,7 +35,7 @@ Resource::getInstance()->extCss([
                     <select id="team_id" name="team_id" class="valid">
                         <option value="0">请选择</option>
                         <option value="1">马刺</option>
-                        <option value="4">火箭</option>
+                        <option value="2">火箭</option>
                     </select>
                 </div>
             </div>
