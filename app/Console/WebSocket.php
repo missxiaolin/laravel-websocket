@@ -1,9 +1,11 @@
 <?php
+
 namespace App\Console;
 
 use Illuminate\Console\Command;
 use swoole_websocket_server;
 use swoole_websocket_frame;
+use Illuminate\Support\Facades\Redis;
 
 abstract class WebSocket extends Command
 {
@@ -32,6 +34,23 @@ abstract class WebSocket extends Command
      */
     protected $description = 'Command description';
 
+    /**
+     * @var \swoole_websocket_server
+     */
+    protected $server;
+
+    /**
+     * 是否记录到redis
+     * @var bool
+     */
+    protected $openRedis = true;
+
+    /**
+     * redis key
+     * @var string
+     */
+    protected $redisKey = 'web:socket:server';
+
     public function handle()
     {
         $this->onConstruct();
@@ -49,6 +68,9 @@ abstract class WebSocket extends Command
         }
 
         $server = new swoole_websocket_server($this->host, $this->prot);
+
+        $this->server = $server;
+
 
         $server->set([
             'worker_num' => 1,
@@ -85,6 +107,10 @@ abstract class WebSocket extends Command
         });
 
         $this->ready($server);
+
+        if ($this->openRedis) {
+            Redis::set($this->redisKey, json_encode($server, true));
+        }
 
         $server->start();
     }
