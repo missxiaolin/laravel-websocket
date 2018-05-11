@@ -39,18 +39,6 @@ abstract class WebSocket extends Command
      */
     protected $server;
 
-    /**
-     * 是否记录到redis
-     * @var bool
-     */
-    protected $openRedis = true;
-
-    /**
-     * redis key
-     * @var string
-     */
-    protected $redisKey = 'web:socket:server';
-
     public function handle()
     {
         $this->onConstruct();
@@ -108,11 +96,8 @@ abstract class WebSocket extends Command
 
         $this->ready($server);
 
-        if ($this->openRedis) {
-            Redis::set($this->redisKey, json_encode($server, true));
-        }
-
         $server->start();
+
     }
 
     /**

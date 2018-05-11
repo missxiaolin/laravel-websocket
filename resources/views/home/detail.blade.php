@@ -13,10 +13,6 @@ Resource::getInstance()->extCss([
     <header class="header xxl-font">
         <i class="icon iconfont icon-fanhui back" id="back"></i>
         马刺vs火箭赛况
-        <!--用户处于登录状态时，将该按钮隐藏-->
-        <a href="./login.html">
-            <i class="icon iconfont icon-wode my"></i>
-        </a>
     </header>
     <div class="content">
         <div class="poster">
