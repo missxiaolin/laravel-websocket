@@ -43,6 +43,7 @@ abstract class WebSocket extends Command
     {
         $this->onConstruct();
         $this->mainAction();
+        $this->end();
     }
 
     /**
@@ -104,7 +105,7 @@ abstract class WebSocket extends Command
      * 基本参数
      * @return mixed
      */
-    abstract protected function onConstruct();
+    abstract public function onConstruct();
 
     /**
      * @desc    WebSocket 连接到服务器
@@ -112,7 +113,7 @@ abstract class WebSocket extends Command
      * @param swoole_websocket_server $server
      * @param                         $request
      */
-    abstract protected function connect(swoole_websocket_server $server, $request);
+    abstract public function connect(swoole_websocket_server $server, $request);
 
     /**
      * @desc   WebSocket 收到客户端消息
@@ -120,7 +121,7 @@ abstract class WebSocket extends Command
      * @param swoole_websocket_server $server
      * @param swoole_websocket_frame $frame
      */
-    abstract protected function message(swoole_websocket_server $server, swoole_websocket_frame $frame);
+    abstract public function message(swoole_websocket_server $server, swoole_websocket_frame $frame);
 
     /**
      * @desc   WebSocket 断开连接
@@ -129,7 +130,7 @@ abstract class WebSocket extends Command
      * @param $fd
      * @return mixed
      */
-    abstract protected function close($ser, $fd);
+    abstract public function close($ser, $fd);
 
     /**
      * @desc   准备开启服务器
