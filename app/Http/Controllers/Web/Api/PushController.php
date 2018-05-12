@@ -19,15 +19,16 @@ class PushController extends BaseController
     /**
      * 消息发送、记录
      * @param PushForm $form
+     * @param OutsService $service
      * @return \Illuminate\Http\JsonResponse
      */
-    public function push(PushForm $form)
+    public function push(PushForm $form, OutsService $service)
     {
         $data = request()->all();
         // 表单验证
         $form->validate($data);
         // 记录数据库
-        $data = OutsService::getInstance()->setOuts($form);
+        $data = $service->setOuts($form);
         // 消息发送到web
         Redis::lpush(Sys::REDIS_WEB_SERVER_KEY, json_encode($data, JSON_UNESCAPED_UNICODE));
         return api_response([]);
