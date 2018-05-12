@@ -70,7 +70,10 @@ class Server extends WebSocket
      */
     public function message(swoole_websocket_server $server, swoole_websocket_frame $frame)
     {
-        // TODO: Implement message() method.
+        // 循环当前的所有连接，并把接收到的客户端信息全部发送
+        foreach ($server->connections as $fd) {
+            $server->push($fd, $frame->data);
+        }
     }
 
     /**
