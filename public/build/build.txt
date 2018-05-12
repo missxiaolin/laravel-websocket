@@ -109,8 +109,10 @@ js/lib/layui/css/modules/layer/default/layer.css
 
 js/../pages/home/detail.js
 ----------------
-js/lib/jquery/jquery-2.0.0.min.js
+js/lib/zepto-custom.min.js
+js/lib/ajax.js
 js/../pages/home/detail.js
+js/lib/jquery/jquery-2.0.0.min.js
 
 js/../pages/home/index.js
 ----------------
@@ -127,7 +129,10 @@ js/../pages/home/login.js
 js/../pages/live/index.js
 ----------------
 js/lib/jquery/jquery-2.0.0.min.js
+js/lib/zepto-custom.min.js
+js/lib/zepto-mvalidate.js
 js/component/upload.js
 js/lib/jquery-file-upload/js/vendor/jquery.ui.widget.js
 js/lib/jquery-file-upload/js/jquery.fileupload.js
+js/lib/ajax.js
 js/../pages/live/index.js
