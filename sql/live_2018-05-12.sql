@@ -7,7 +7,7 @@
 #
 # Host: localhost (MySQL 5.7.18)
 # Database: live
-# Generation Time: 2018-05-06 10:05:21 +0000
+# Generation Time: 2018-05-12 08:48:19 +0000
 # ************************************************************
 
 
@@ -31,7 +31,7 @@ CREATE TABLE `live_chart` (
   `user_id` tinyint(1) unsigned NOT NULL DEFAULT '0' COMMENT '用户id',
   `content` varchar(200) NOT NULL DEFAULT '' COMMENT '内容',
   `status` tinyint(1) unsigned NOT NULL DEFAULT '0' COMMENT '状态',
-  `create_time` int(10) unsigned NOT NULL DEFAULT '0',
+  `create_time` datetime NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -52,8 +52,8 @@ CREATE TABLE `live_game` (
   `image` varchar(20) NOT NULL DEFAULT '' COMMENT '图片',
   `start_time` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '直播开始时间',
   `status` tinyint(1) unsigned NOT NULL DEFAULT '0' COMMENT '是否开始',
-  `create_time` int(10) unsigned NOT NULL DEFAULT '0',
-  `update_time` int(10) unsigned NOT NULL DEFAULT '0',
+  `create_time` datetime NOT NULL,
+  `update_time` datetime NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -72,7 +72,7 @@ CREATE TABLE `live_outs` (
   `image` varchar(20) NOT NULL DEFAULT '' COMMENT '图片',
   `type` tinyint(1) unsigned NOT NULL DEFAULT '0',
   `status` tinyint(1) unsigned NOT NULL DEFAULT '0' COMMENT '状态',
-  `create_time` int(10) unsigned NOT NULL DEFAULT '0',
+  `create_time` datetime NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -90,8 +90,8 @@ CREATE TABLE `live_player` (
   `age` tinyint(1) unsigned NOT NULL DEFAULT '0' COMMENT '球员年龄',
   `position` tinyint(1) unsigned NOT NULL DEFAULT '0' COMMENT '编号',
   `status` tinyint(1) unsigned NOT NULL DEFAULT '0' COMMENT '是否显示',
-  `create_time` int(10) unsigned NOT NULL DEFAULT '0',
-  `update_time` int(10) unsigned NOT NULL DEFAULT '0',
+  `create_time` datetime NOT NULL,
+  `update_time` datetime NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -107,8 +107,8 @@ CREATE TABLE `live_team` (
   `name` varchar(20) NOT NULL DEFAULT '' COMMENT '球队名称',
   `image` varchar(20) NOT NULL DEFAULT '' COMMENT '球队Logo图片',
   `type` tinyint(1) unsigned NOT NULL DEFAULT '0' COMMENT '球队分区',
-  `create_time` int(10) unsigned NOT NULL DEFAULT '0',
-  `update_time` int(10) unsigned NOT NULL DEFAULT '0',
+  `create_time` datetime NOT NULL,
+  `update_time` datetime NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 

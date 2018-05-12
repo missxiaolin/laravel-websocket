@@ -13,6 +13,13 @@ use App\Src\From\Form;
 
 class PushForm extends Form
 {
+    public $type;
+
+    public $team_id;
+
+    public $content;
+
+    public $image;
 
     public function rules()
     {
@@ -41,6 +48,10 @@ class PushForm extends Form
 
     public function validation()
     {
+        $this->type = array_get($this->data, 'type');
+        $this->team_id = array_get($this->data, 'team_id');
+        $this->content = array_get($this->data, 'content');
+        $this->image = array_get($this->data, 'image');
     }
 
 }

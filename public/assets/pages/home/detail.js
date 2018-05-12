@@ -27,7 +27,7 @@ require(['jquery', 'page.params'], function ($, params) {
 
     // 实例化 onmessage
     websocket.onmessage = function (evt) {
-        console.log("ws-server-return-data:" + evt.data);
+        push(evt.data)
     }
 
     //onclose
@@ -39,5 +39,10 @@ require(['jquery', 'page.params'], function ($, params) {
 
     websocket.onerror = function (evt, e) {
         console.log("error:" + evt.data);
+    }
+
+    function push(data) {
+        data = JSON.parse(data);
+        console.log(data)
     }
 });
