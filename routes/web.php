@@ -31,6 +31,8 @@ Route::group(['prefix' => 'api', 'namespace' => 'Api'], function () {
     Route::any('/user/login', 'UserController@login')->name('api.user.login');
     // push
     Route::any('/push/push', 'PushController@push')->name('api.push.push');
+    // 聊天
+    Route::any('/push/chat', 'PushController@chat')->name('api.push.chat');
 });
 
 // admin

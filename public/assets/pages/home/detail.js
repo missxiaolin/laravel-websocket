@@ -1,4 +1,8 @@
-require(['jquery', 'page.params'], function ($, params) {
+require([
+    'jquery',
+    'page.params',
+    'ajax'
+], function ($, params) {
     var $nav = $('.tab-nav div'),
         $content = $('.tab-block > div'),
         $back = $('#back');
@@ -11,6 +15,28 @@ require(['jquery', 'page.params'], function ($, params) {
         $this.addClass('active');
         $content.css('display', 'none');
         $content.eq($t).css('display', 'block');
+    });
+
+    // 聊天模块
+    $('#discuss-box').keydown(function (event) {
+        var text = $(this).val(),
+            self = $(this);
+        // 回车事件
+        if (event.keyCode == 13 && text) {
+            $.http({
+                type: 'POST',
+                dataType: 'json',
+                url: '/api/push/chat',
+                data: $('#chat-form').serialize(),
+                success: function (data) {
+                    if (data.code == 0){
+                        self.val("")
+                    }
+                },
+                error: function (data) {
+                }
+            });
+        }
     });
 
     $back.click(function () {

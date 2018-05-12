@@ -57,81 +57,18 @@ Resource::getInstance()->extCss([
                         <p>01:46 犯规 个人犯规 Ruan</p>
                     </div>
                 </div>
-                <div class="frame">
-                    <h3 class="frame-header">
-                        <i class="icon iconfont icon-shijian"></i>第二节 01：40
-                    </h3>
-                    <div class="frame-item">
-                        <span class="frame-dot"></span>
-                        <div class="frame-item-author">
-                            <img src="{!! isset($host) ? $host : ''!!}/images/team2.png" width="20px" height="20px"/> 火箭
-                        </div>
-                        <p>比赛如火如荼~~~</p>
-                        <p>
-                            <img src="{!! isset($host) ? $host : ''!!}/images/1.png" width="40%"/>
-                        </p>
-                    </div>
-                    <div class="frame-item">
-                        <span class="frame-dot"></span>
-                        <div class="frame-item-author">
-                            singwa(评论员)
-                        </div>
-                        <p>08:44:41 火箭队请求暂停 常规暂停</p>
-                        <p>08:44:40 哈登进攻犯规 个人犯规3次</p>
-                    </div>
-                </div>
             </div>
             <div id="comments" class="hidden comments">
                 <div class="comment">
                     <span>xixi</span>
                     <span>赞~</span>
                 </div>
-                <div class="comment">
-                    <span>xixi</span>
-                    <span>赞~哈登mvp</span>
-                </div>
-                <div class="comment">
-                    <span>singwa</span>
-                    <span>哈登+克里斯-保罗 必定能夺冠，加油火箭！</span>
-                </div>
-                <div class="comment">
-                    <span>mooc</span>
-                    <span>詹姆斯去火箭吧~</span>
-                </div>
-                <div class="comment">
-                    <span>singwa2</span>
-                    <span>这场比赛太精彩了</span>
-                </div>
-                <div class="comment">
-                    <span>singwa</span>
-                    <span> 火箭目前位列西部第一，在击败独行侠之后，他们已经领先勇士1.5个胜场，而马刺的处境则是较为尴尬，他们目前拿到了37胜29负，只比身后的快船、掘金和爵士多0.5个胜场，如果马刺赢下火箭，他们将会继续保住西部前7的位置。</span>
-                </div>
-                <div class="comment">
-                    <span>xixi</span>
-                    <span>赞~</span>
-                </div>
-                <div class="comment">
-                    <span>xixi</span>
-                    <span>赞~dfdfgkkksds分担分担分担分担浮动</span>
-                </div>
-                <div class="comment">
-                    <span>singwa</span>
-                    <span>《烈火如歌》最近真是吸粉无数，各种话题随随便便就有成千上万的阅读量，本剧的点击量也轻轻松松破了十亿。看来热巴的高颜值和周渝民男神的实力演技，获得了大家的广泛肯...[详情]</span>
-                </div>
-                <div class="comment">
-                    <span>xixi</span>
-                    <span>赞~</span>
-                </div>
-                <div class="comment">
-                    <span>xixi</span>
-                    <span>赞~dfdfgkkksds分担分担分担分担浮动</span>
-                </div>
-                <div class="comment">
-                    <span>singwa</span>
-                    <span>《烈火如歌》最近真是吸粉无数，各种话题随随便便就有成千上万的阅读量，本剧的点击量也轻轻松松破了十亿。看来热巴的高颜值和周渝民男神的实力演技，获得了大家的广泛肯...[详情]</span>
-                </div>
                 <div class="comment-form">
-                    <input type="text" placeholder="别憋着，说点啥~~ 回车既发射"></input>
+                    <form id="chat-form" onsubmit="return false;">
+                        <input type="hidden" name="game_id" value="1">
+                        <input id="discuss-box" type="text" name="content" placeholder="别憋着，说点啥~~ 回车既发射"></input>
+                        {{ csrf_field() }}
+                    </form>
                 </div>
             </div>
             <div id="match-data" class="hidden match-data">
