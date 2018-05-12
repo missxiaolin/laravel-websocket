@@ -9,21 +9,23 @@ use swoole_websocket_frame;
 use swoole_websocket_server;
 use swoole_process;
 
-class Server extends WebSocket
+class ChatServer extends WebSocket
 {
+    protected $prot = 10086;
+
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'web:socket:server';
+    protected $signature = 'web:socket:chat:server';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = '直播发送';
+    protected $description = '聊天室';
 
     /**
      * Create a new command instance.
@@ -43,7 +45,7 @@ class Server extends WebSocket
         // 后台消息传递
         $process = new swoole_process(function ($process) use ($server) {
             while (true) {
-                list($key, $value) = Redis::brpop(Sys::REDIS_WEB_SERVER_KEY, 3);
+                list($key, $value) = Redis::brpop(Sys::REDIS_CHAT_WEB_SERVER_KEY, 3);
                 if ($value) {
                     foreach ($server->connections as $fd) {
                         $server->push($fd, $value);

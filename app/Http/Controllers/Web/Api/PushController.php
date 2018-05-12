@@ -43,7 +43,7 @@ class PushController extends BaseController
         $data = request()->all();
         dd($data);
         // 消息发送到web
-//        Redis::lpush(Sys::REDIS_WEB_SERVER_KEY, json_encode($data, JSON_UNESCAPED_UNICODE));
+//        Redis::lpush(Sys::REDIS_CHAT_WEB_SERVER_KEY, json_encode($data, JSON_UNESCAPED_UNICODE));
         return api_response([]);
     }
 }
