@@ -1,4 +1,8 @@
-require(['zepto', 'validate', 'ajax'], function ($, mvalidate) {
+require([
+    'zepto',
+    'validate',
+    'ajax'
+], function ($, mvalidate) {
     // 返回上一页
     $('#back').click(function (e) {
         window.history.back();

@@ -1,5 +1,7 @@
 <?php
+
 use \App\Http\Controllers\Resource;
+
 Resource::getInstance()->setTitle('直播详情页');
 Resource::getInstance()->extJs([
     'pages/home/detail'
@@ -59,10 +61,7 @@ Resource::getInstance()->extCss([
                 </div>
             </div>
             <div id="comments" class="hidden comments">
-                <div class="comment">
-                    <span>xixi</span>
-                    <span>赞~</span>
-                </div>
+
                 <div class="comment-form">
                     <form id="chat-form" onsubmit="return false;">
                         <input type="hidden" name="game_id" value="1">

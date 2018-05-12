@@ -1,5 +1,5 @@
 require([
-    'jquery',
+    'zepto',
     'page.params',
     'ajax'
 ], function ($, params) {
@@ -29,7 +29,7 @@ require([
                 url: '/api/push/chat',
                 data: $('#chat-form').serialize(),
                 success: function (data) {
-                    if (data.code == 0){
+                    if (data.code == 0) {
                         self.val("")
                     }
                 },
@@ -89,4 +89,34 @@ require([
 
         $('#match-result').prepend(html)
     }
+
+    var chatWebsocket = new WebSocket("ws://127.0.0.1:8812");
+
+    // 实例对象的onopen属性
+    chatWebsocket.onopen = function (evt) {
+    }
+
+    // 实例化 onmessage
+    chatWebsocket.onmessage = function (evt) {
+        var data = JSON.parse(evt.data),
+            html = '<div class="comment">';
+        html += '<span>' + data.name + '</span>';
+        html += '<span>' + data.content + '</span>';
+        html += '</div>'
+        $('#comments').prepend(html)
+
+    }
+
+    //onclose
+    chatWebsocket.onclose = function (evt) {
+        console.log("close");
+        console.log(evt)
+    }
+    //onerror
+
+    chatWebsocket.onerror = function (evt, e) {
+        console.log("error:" + evt.data);
+    }
+
+
 });

@@ -11,7 +11,7 @@ use swoole_process;
 
 class ChatServer extends WebSocket
 {
-    protected $prot = 10086;
+    protected $prot = 8812;
 
     /**
      * The name and signature of the console command.
