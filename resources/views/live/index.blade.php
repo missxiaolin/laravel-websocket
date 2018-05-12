@@ -12,7 +12,7 @@ Resource::getInstance()->extCss([
 @extends("layout.live")
 @section("content")
     <div class="x-body">
-        <form class="layui-form" onsubmit="return false">
+        <form id="form" class="layui-form" onsubmit="return false">
 
             <div class="layui-form-item">
                 <label for="username" class="layui-form-label">
@@ -71,6 +71,7 @@ Resource::getInstance()->extCss([
             <div class="layui-form-item">
                 <label for="L_repass" class="layui-form-label">
                 </label>
+                {{ csrf_field() }}
                 <button type="submit" class="layui-btn" lay-filter="add" id="submit-btn" lay-submit="">
                     增加
                 </button>

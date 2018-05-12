@@ -1,9 +1,11 @@
 require([
     'jquery',
+    'validate',
     'upload',
     'jquery.ui.widget',
-    'jquery.fileupload'
-], function ($, fileupload) {
+    'jquery.fileupload',
+    'ajax'
+], function ($, mvalidate, fileupload) {
     //图片上传
     fileupload({
         url: '/admin/image/upload',
@@ -12,12 +14,49 @@ require([
         callback: function (result, data) {
             if (result.code == 0) {
                 var html = '<img width="200px" src="' + result.data.image + '" alt="">';
-                html += '<input type="hidden" name="image" id="image" value="'+ result.data.image +'">'
+                html += '<input type="hidden" name="image" id="image" value="' + result.data.image + '">'
                 $('#fileList').html(html);
             }
             console.log(result)
         }
     });
+
+    $('#form').mvalidate({
+        type: 2,
+        onKeyup: true,
+        sendForm: true,
+        firstInvalidFocus: true,
+        valid: function (event, options) {
+            //点击提交按钮时，表单通过验证触发函数
+            $.http({
+                type: 'POST',
+                dataType: 'json',
+                url: '/api/push/push',
+                data: $('#form').serialize(),
+                success: function (data) {
+                    if (data.code == 0) {
+                        window.location.reload()
+                    }else {
+                        alert(data.message)
+                    }
+
+                },
+                error: function (data) {
+                }
+            });
+        },
+        invalid: function (event, status, options) {
+            //点击提交按钮时,表单未通过验证触发函数
+        },
+        eachField: function (event, status, options) {
+            //点击提交按钮时,表单每个输入域触发这个函数 this 执向当前表单输入域，是jquery对象
+        },
+        eachValidField: function (val) {
+        },
+        eachInvalidField: function (event, status, options) {
+        },
+        descriptions: {}
+    })
 
 
     //加载弹出层

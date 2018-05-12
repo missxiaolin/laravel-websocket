@@ -27,7 +27,10 @@ Route::group(['middleware' => 'auth.web'], function () {
 
 // api
 Route::group(['prefix' => 'api', 'namespace' => 'Api'], function () {
+    // 登录
     Route::any('/user/login', 'UserController@login')->name('api.user.login');
+    // push
+    Route::any('/push/push', 'PushController@push')->name('api.push.push');
 });
 
 // admin
