@@ -44,5 +44,23 @@ require(['jquery', 'page.params'], function ($, params) {
     function push(data) {
         data = JSON.parse(data);
         console.log(data)
+
+        html = '<div class="frame">';
+        html += '<h3 class="frame-header">';
+        html += '<i class="icon iconfont icon-shijian"></i>' + data.type;
+        html += '</h3>';
+        html += '<div class="frame-item">';
+        html += '<span class="frame-dot"></span>';
+        html += '<div class="frame-item-author">';
+        if (data.logo) {
+            html += '<img src="' + data.logo + '" width="20px" height="20px"/>';
+        }
+        html += data.title
+        html += '</div>';
+        html += '<p>' + data.content + '</p>';
+        html += '</div>';
+        html += '</div>';
+
+        $('#match-result').prepend(html)
     }
 });
