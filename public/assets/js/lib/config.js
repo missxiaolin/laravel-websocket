@@ -10,7 +10,8 @@ require.config({
         'ajax': 'lib/ajax',
         'jquery.fileupload': 'lib/jquery-file-upload/js/jquery.fileupload',
         'jquery.ui.widget': 'lib/jquery-file-upload/js/vendor/jquery.ui.widget',
-        'upload': 'component/upload'
+        'upload': 'component/upload',
+        'webSocket': 'component/websocket',
     },
     shim: {
         'zepto': {

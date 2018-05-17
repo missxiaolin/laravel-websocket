@@ -1,8 +1,9 @@
 require([
     'zepto',
+    'webSocket',
     'page.params',
     'ajax'
-], function ($, params) {
+], function ($, socket, params) {
     var $nav = $('.tab-nav div'),
         $content = $('.tab-block > div'),
         $back = $('#back');
@@ -43,29 +44,21 @@ require([
         window.history.back();
     });
 
-    var websocket = new WebSocket("ws://127.0.0.1:11521");
+    new socket({
+        url: "ws://127.0.0.1:11521",
+        onopen: function (evt) {
 
-    // 实例对象的onopen属性
-    websocket.onopen = function (evt) {
-        // websocket.send("hello-sinwa");
-        // console.log("conected-swoole-success");
-    }
+        },
+        onmessage: function (evt) {
+            push(evt.data)
+        },
+        onclose: function (evt) {
 
-    // 实例化 onmessage
-    websocket.onmessage = function (evt) {
-        push(evt.data)
-    }
+        },
+        onerror: function (evt) {
 
-    //onclose
-    websocket.onclose = function (evt) {
-        console.log("close");
-        console.log(evt)
-    }
-    //onerror
-
-    websocket.onerror = function (evt, e) {
-        console.log("error:" + evt.data);
-    }
+        }
+    })
 
     function push(data) {
         data = JSON.parse(data);
@@ -90,33 +83,26 @@ require([
         $('#match-result').prepend(html)
     }
 
-    var chatWebsocket = new WebSocket("ws://127.0.0.1:8812");
+    new socket({
+        url: "ws://127.0.0.1:8812",
+        onopen: function (evt) {
 
-    // 实例对象的onopen属性
-    chatWebsocket.onopen = function (evt) {
-    }
+        },
+        onmessage: function (evt) {
+            var data = JSON.parse(evt.data),
+                html = '<div class="comment">';
+            html += '<span>' + data.name + '</span>';
+            html += '<span>' + data.content + '</span>';
+            html += '</div>'
+            $('#comments').prepend(html)
+        },
+        onclose: function (evt) {
 
-    // 实例化 onmessage
-    chatWebsocket.onmessage = function (evt) {
-        var data = JSON.parse(evt.data),
-            html = '<div class="comment">';
-        html += '<span>' + data.name + '</span>';
-        html += '<span>' + data.content + '</span>';
-        html += '</div>'
-        $('#comments').prepend(html)
+        },
+        onerror: function (evt) {
 
-    }
-
-    //onclose
-    chatWebsocket.onclose = function (evt) {
-        console.log("close");
-        console.log(evt)
-    }
-    //onerror
-
-    chatWebsocket.onerror = function (evt, e) {
-        console.log("error:" + evt.data);
-    }
+        }
+    })
 
 
 });
